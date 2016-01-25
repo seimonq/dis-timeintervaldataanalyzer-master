@@ -1,0 +1,8 @@
+Für die Verwendung der TIDA Software sind folgende Schritte zu beachten:
+
+Es existiert in dem Ordner source das Paket net.kern.master.preaggregates, wo alle Quelldateien enthalten sind.
+
+Es existiert in dem Ordner test das Paket net.kern.master.preaggregates, wo alle Quelldateien enthalten sind.
+
+
+21.01.2015 Simon Kern

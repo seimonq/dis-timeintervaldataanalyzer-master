@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<model xmlns="http://dev.meisen.net/xsd/dissertation/model"
+       xmlns:csv="http://dev.meisen.net/xsd/dissertation/model/csv"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:dim="http://dev.meisen.net/xsd/dissertation/dimension"
+       
+       xsi:schemaLocation="http://dev.meisen.net/xsd/dissertation/model      http://dev.meisen.net/xsd/dissertation/tidaModel.xsd
+                           http://dev.meisen.net/xsd/dissertation/model/csv  http://dev.meisen.net/xsd/dissertation/tidaCsvExtension.xsd
+						   http://dev.meisen.net/xsd/dissertation/dimension  http://dev.meisen.net/xsd/dissertation/tidaDimension.xsd"
+       offlinemode="false"
+
+       id="datasetCaller">
+
+  <config> 
+    
+    <dataretrievers>
+      <dataretriever id="csv_test2">
+        <csv:config file="/net/kern/master/preaggregates/calls_10000.csv" classpath="true" separator=";" />
+      </dataretriever>
+    </dataretrievers>
+  </config>
+  
+  <time>
+    <timeline start="01.09.2013" end="15.11.2013" granularity="MINUTE" />
+  </time>
+  
+  <meta>
+    <descriptors>
+      <string id="CALLER"      name="CALLER"      failonduplicates="false" null="false" />
+      <string id="ORIGIN"      name="ORIGIN"      failonduplicates="false" null="false" />
+    </descriptors>
+
+	<entries>
+      <entry descriptor="CALLER" dataretriever="csv_test2">
+        <csv:selector position="1" />
+      </entry>
+      <entry descriptor="ORIGIN" dataretriever="csv_test2">
+        <csv:selector position="6" />
+      </entry>
+    </entries>
+  </meta>
+
+  
+  <dim:dimensions>
+
+	<dim:timedimension id="TIME">
+		<dim:hierarchy id="RASTER" all="Everytime" timezone="DST">
+			<dim:level id="MONTH" template="MONTHS" 	/>
+			<dim:level id="DAY" template="DAYS" 		/>
+			<dim:level id="HOUR" template="HOURS" 		/>
+			<dim:level id="MINUTE" template="MINUTES" 	/>
+		</dim:hierarchy>
+	  </dim:timedimension>
+
+	  <dim:dimension id="Caller" descriptor="CALLER">
+
+	  <dim:hierarchy id="Advertisement" all="all caller">
+			<dim:level id="Probability" >
+			  <dim:member id="high"   rollUpTo="*" />
+			  <dim:member id="medium" rollUpTo="*" />
+			  <dim:member id="low"    rollUpTo="*" />
+			</dim:level>
+			
+			<dim:level id="NegativeCallReason">
+				<dim:member id="complaint" rollUpTo="low" />
+			</dim:level>
+			<dim:level id="PositiveCallReason">	
+				<dim:member id="order" rollUpTo="high" />
+			</dim:level>	
+			<dim:level id="NeutralCallReason">	
+				<dim:member id="information" rollUpTo="high" />
+				<dim:member id="changeOfAddress" rollUpTo="medium"	/>
+			</dim:level>
+			
+			<dim:level id="CallerName" >
+				<dim:member id="Jana" value="Jana" rollUpTo="complaint,changeOfAddress" />
+				<dim:member id="Mia" value="Mia" rollUpTo="information,order" />
+				<dim:member id="Rafael" value="Rafael" rollUpTo="complaint,order" />
+				<dim:member id="Mila" value="Mila" rollUpTo="information,order" />
+				<dim:member id="Anton" value="Anton" rollUpTo="information" />
+				<dim:member id="Fabian" value="Fabian" rollUpTo="information,order" />
+			</dim:level>
+	</dim:hierarchy>	
+
+		<dim:hierarchy id="Physical" >
+			<dim:level id="Gender" >
+			  <dim:member id="Male"   reg="Rafael|Leni|Moritz|Jonathan|Lukas|Max
+											|Hannes|Mila|Anton|Niklas|Ben|Paul|Erik|Maximilian|Elias|Luis|Zoe|
+											Adrian|Noah|Jan|Jakob|Tim|Mika|Fabian|Jonas|Finn|Julian
+											|David|Emil|Emily|Oskar|Alexander|Luca|Leo|Vincent|Henry
+											|Tom|Mats|Jannik|Lennard|Simon|Leon|Linus|Liam" rollUpTo="*" />
+											
+			  <dim:member id="Female" reg="Jana|Ida|Anna|Clara|Lisa|Emma|Frieda|Laura|Mia|Nele
+											|Sophie|Sofia|Lotta|Alina|Lara|Mathilda|Emely|Charlotte|
+											Julia|Marie|Luisa|Maja|Sarah|Greta|Lilly|Melina|Lina
+											|Pia|Lia|Emilia|Leonie|Lena|Lea" rollUpTo="*" 	/>
+			</dim:level>
+		</dim:hierarchy>
+	  </dim:dimension> 
+
+  </dim:dimensions>
+ 
+  <structure>
+    <meta position="1" descriptor="CALLER"   />
+    <meta position="6" descriptor="ORIGIN"   />
+    
+    <interval position="2" type="start" 	 />
+    <interval position="3" type="end" 		 />
+  </structure>
+  
+  <data metahandling="create" intervalhandling="boundariesWhenNull">
+    <dataset dataretriever="csv_test2" />
+  </data>
+</model>
