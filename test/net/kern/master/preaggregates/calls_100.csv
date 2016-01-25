@@ -1,0 +1,101 @@
+caller;start;end;duration;recipient;origin;destination;ratepermin;costs;origincontinent;destinationcontinent;callergender;recipientgender
+Jana;05.09.2013 19:19:04;05.09.2013 19:28:04;9;Markus;Kansas;Sweden;0.07;0.63;United States;Europe;Female;Male
+Jana;05.09.2013 22:08:39;05.09.2013 22:18:39;10;Markus;Kansas;Sweden;0.07;0.70;United States;Europe;Female;Male
+Jana;05.09.2013 23:53:55;05.09.2013 23:59:55;6;Markus;Kansas;Sweden;0.07;0.42;United States;Europe;Female;Male
+Jana;06.09.2013 01:30:44;06.09.2013 02:27:44;57;Markus;Kansas;Sweden;0.07;3.99;United States;Europe;Female;Male
+Jana;06.09.2013 01:52:51;06.09.2013 02:46:51;54;Markus;Kansas;Sweden;0.07;3.78;United States;Europe;Female;Male
+Jana;06.09.2013 02:12:23;06.09.2013 02:18:23;6;Markus;Kansas;Sweden;0.07;0.42;United States;Europe;Female;Male
+Jana;06.09.2013 06:01:23;06.09.2013 06:20:23;19;Melinda;Kansas;Taiwan;0.07;1.33;United States;Asia;Female;Female
+Jana;06.09.2013 20:01:48;06.09.2013 21:05:48;64;Markus;Kansas;Sweden;0.07;4.48;United States;Europe;Female;Male
+Jana;06.09.2013 20:02:36;06.09.2013 20:06:36;4;Markus;Kansas;Sweden;0.07;0.28;United States;Europe;Female;Male
+Rafael;06.09.2013 20:28:33;06.09.2013 21:23:33;55;Anni;Maine;Cayman Islands;0.24;13.20;United States;Oceania;Male;Female
+Jana;06.09.2013 20:37:01;06.09.2013 22:00:01;83;Kaan;Kansas;Reunion Island;1.00;83.00;United States;Africa;Female;Male
+Rafael;06.09.2013 20:37:50;06.09.2013 20:57:50;20;Ceylin;Maine;Mayotte Island;1.00;20.00;United States;Africa;Male;Female
+Jana;07.09.2013 01:20:24;07.09.2013 02:49:24;89;Vivien;Kansas;Ethiopia;1.00;89.00;United States;Africa;Female;Female
+Jana;07.09.2013 01:22:24;07.09.2013 01:50:24;28;Vivien;Kansas;Ethiopia;1.00;28.00;United States;Africa;Female;Female
+Jana;07.09.2013 03:04:53;07.09.2013 03:18:53;14;Vivien;Kansas;Ethiopia;1.00;14.00;United States;Africa;Female;Female
+Jana;07.09.2013 03:35:51;07.09.2013 03:42:51;7;Christopher;Kansas;Germany;0.07;0.49;United States;Europe;Female;Male
+Jana;07.09.2013 03:42:30;07.09.2013 03:48:30;6;Christopher;Kansas;Germany;0.07;0.42;United States;Europe;Female;Male
+Jana;07.09.2013 04:32:25;07.09.2013 04:41:25;9;Christopher;Kansas;Germany;0.07;0.63;United States;Europe;Female;Male
+Jana;07.09.2013 06:08:38;07.09.2013 07:05:38;57;Christopher;Kansas;Germany;0.07;3.99;United States;Europe;Female;Male
+Jana;07.09.2013 06:09:34;07.09.2013 06:54:34;45;Christopher;Kansas;Germany;0.07;3.15;United States;Europe;Female;Male
+Jana;07.09.2013 06:10:31;07.09.2013 07:17:31;67;Christopher;Kansas;Germany;0.07;4.69;United States;Europe;Female;Male
+Jana;07.09.2013 06:11:31;07.09.2013 06:15:31;4;René;Kansas;Dominican Republic;0.17;0.68;United States;North America;Female;Male
+Jana;07.09.2013 06:11:48;07.09.2013 07:03:48;52;Christopherus;Kansas;Togo;1.08;56.16;United States;Africa;Female;Male
+Jana;07.09.2013 07:07:02;07.09.2013 07:46:02;39;Christopherus;Kansas;Togo;1.08;42.12;United States;Africa;Female;Male
+Jana;07.09.2013 13:46:36;07.09.2013 14:59:36;73;Christopherus;Kansas;Togo;1.08;78.84;United States;Africa;Female;Male
+Jana;07.09.2013 19:29:03;07.09.2013 19:31:03;2;Christopherus;Kansas;Togo;1.08;2.16;United States;Africa;Female;Male
+Jana;07.09.2013 19:31:42;07.09.2013 21:27:42;116;Christopherus;Kansas;Togo;1.08;125.28;United States;Africa;Female;Male
+Jana;07.09.2013 19:35:39;07.09.2013 20:13:39;38;Christopherus;Kansas;Togo;1.08;41.04;United States;Africa;Female;Male
+Jana;07.09.2013 19:36:49;07.09.2013 20:45:49;69;Christopherus;Kansas;Togo;1.08;74.52;United States;Africa;Female;Male
+Jana;07.09.2013 19:40:06;07.09.2013 20:37:06;57;Christopherus;Kansas;Togo;1.08;61.56;United States;Africa;Female;Male
+Jana;07.09.2013 19:41:20;07.09.2013 19:47:20;6;Christopherus;Kansas;Togo;1.08;6.48;United States;Africa;Female;Male
+Jana;07.09.2013 19:42:33;07.09.2013 20:34:33;52;Christopherus;Kansas;Togo;1.08;56.16;United States;Africa;Female;Male
+Jana;07.09.2013 19:54:51;07.09.2013 21:09:51;75;Christopherus;Kansas;Togo;1.08;81.00;United States;Africa;Female;Male
+Jana;08.09.2013 11:36:57;08.09.2013 13:34:57;118;Christopherus;Kansas;Togo;1.08;127.44;United States;Africa;Female;Male
+Jana;08.09.2013 12:47:44;08.09.2013 14:25:44;98;Melinda;Kansas;Taiwan;0.07;6.86;United States;Asia;Female;Female
+Jana;08.09.2013 20:12:32;08.09.2013 20:32:32;20;Christopherus;Kansas;Togo;1.08;21.60;United States;Africa;Female;Male
+Jana;09.09.2013 10:15:21;09.09.2013 11:48:21;93;Christopherus;Kansas;Togo;1.08;100.44;United States;Africa;Female;Male
+Jana;09.09.2013 13:47:05;09.09.2013 14:15:05;28;Melinda;Kansas;Taiwan;0.07;1.96;United States;Asia;Female;Female
+Jana;09.09.2013 14:05:46;09.09.2013 14:43:46;38;Melinda;Kansas;Taiwan;0.07;2.66;United States;Asia;Female;Female
+Jana;09.09.2013 15:01:47;09.09.2013 15:17:47;16;Christopherus;Kansas;Togo;1.08;17.28;United States;Africa;Female;Male
+Jana;09.09.2013 16:41:42;09.09.2013 16:55:42;14;Melinda;Kansas;Taiwan;0.07;0.98;United States;Asia;Female;Female
+Jana;10.09.2013 14:50:46;10.09.2013 16:18:46;88;Melinda;Kansas;Taiwan;0.07;6.16;United States;Asia;Female;Female
+Jana;10.09.2013 16:52:53;10.09.2013 16:53:53;1;Melinda;Kansas;Taiwan;0.07;0.07;United States;Asia;Female;Female
+Mila;10.09.2013 17:42:18;10.09.2013 18:21:18;39;Christopherus;Alaska;Togo;1.08;42.12;United States;Africa;Male;Male
+Jana;10.09.2013 19:00:38;10.09.2013 19:54:38;54;Christopherus;Kansas;Togo;1.08;58.32;United States;Africa;Female;Male
+Jana;10.09.2013 21:02:49;10.09.2013 21:40:49;38;Christopherus;Kansas;Togo;1.08;41.04;United States;Africa;Female;Male
+Jana;10.09.2013 21:09:09;10.09.2013 22:39:09;90;Christopherus;Kansas;Togo;1.08;97.20;United States;Africa;Female;Male
+Jana;10.09.2013 22:00:46;10.09.2013 23:11:46;71;Christopherus;Kansas;Togo;1.08;76.68;United States;Africa;Female;Male
+Jana;11.09.2013 00:28:12;11.09.2013 01:03:12;35;Christopherus;Kansas;Togo;1.08;37.80;United States;Africa;Female;Male
+Jana;11.09.2013 00:29:40;11.09.2013 00:55:40;26;Christopherus;Kansas;Togo;1.08;28.08;United States;Africa;Female;Male
+Jana;11.09.2013 00:51:17;11.09.2013 02:02:17;71;Christopherus;Kansas;Togo;1.08;76.68;United States;Africa;Female;Male
+Jana;11.09.2013 03:16:14;11.09.2013 03:53:14;37;Christopherus;Kansas;Togo;1.08;39.96;United States;Africa;Female;Male
+Jana;11.09.2013 04:19:47;11.09.2013 05:26:47;67;Christopherus;Kansas;Togo;1.08;72.36;United States;Africa;Female;Male
+Jana;11.09.2013 04:39:17;11.09.2013 04:56:17;17;Christopherus;Kansas;Togo;1.08;18.36;United States;Africa;Female;Male
+Jana;11.09.2013 04:43:51;11.09.2013 05:18:51;35;Christopherus;Kansas;Togo;1.08;37.80;United States;Africa;Female;Male
+Jana;11.09.2013 08:55:41;11.09.2013 09:29:41;34;Christopherus;Kansas;Togo;1.08;36.72;United States;Africa;Female;Male
+Jana;11.09.2013 08:55:59;11.09.2013 09:26:59;31;Christopherus;Kansas;Togo;1.08;33.48;United States;Africa;Female;Male
+Jana;11.09.2013 08:56:05;11.09.2013 09:26:05;30;Christopherus;Kansas;Togo;1.08;32.40;United States;Africa;Female;Male
+Jana;11.09.2013 08:56:24;11.09.2013 09:54:24;58;Christopherus;Kansas;Togo;1.08;62.64;United States;Africa;Female;Male
+Jana;11.09.2013 08:56:50;11.09.2013 09:39:50;43;Alexia;Kansas;Cameroon;0.48;20.64;United States;Africa;Female;Female
+Jana;11.09.2013 20:04:25;11.09.2013 21:01:25;57;Alexia;Kansas;Cameroon;0.48;27.36;United States;Africa;Female;Female
+Jana;11.09.2013 20:09:18;11.09.2013 20:13:18;4;Alexia;Kansas;Cameroon;0.48;1.92;United States;Africa;Female;Female
+Jana;11.09.2013 21:48:46;11.09.2013 21:56:46;8;Alexia;Kansas;Cameroon;0.48;3.84;United States;Africa;Female;Female
+Jana;11.09.2013 21:58:05;11.09.2013 22:35:05;37;Alexia;Kansas;Cameroon;0.48;17.76;United States;Africa;Female;Female
+Jana;11.09.2013 21:58:46;11.09.2013 23:17:46;79;Alexia;Kansas;Cameroon;0.48;37.92;United States;Africa;Female;Female
+Jana;11.09.2013 22:16:23;11.09.2013 22:56:23;40;Alexia;Kansas;Cameroon;0.48;19.20;United States;Africa;Female;Female
+Jana;11.09.2013 22:27:51;11.09.2013 23:19:51;52;Alexia;Kansas;Cameroon;0.48;24.96;United States;Africa;Female;Female
+Jana;11.09.2013 22:38:13;11.09.2013 23:46:13;68;Alexia;Kansas;Cameroon;0.48;32.64;United States;Africa;Female;Female
+Jana;11.09.2013 23:07:04;11.09.2013 23:31:04;24;Alexia;Kansas;Cameroon;0.48;11.52;United States;Africa;Female;Female
+Jana;12.09.2013 02:48:39;12.09.2013 03:51:39;63;Alexia;Kansas;Cameroon;0.48;30.24;United States;Africa;Female;Female
+Jana;12.09.2013 04:10:37;12.09.2013 05:34:37;84;Alexia;Kansas;Cameroon;0.48;40.32;United States;Africa;Female;Female
+Jana;12.09.2013 05:59:22;12.09.2013 06:02:22;3;Alexia;Kansas;Cameroon;0.48;1.44;United States;Africa;Female;Female
+Jana;12.09.2013 15:50:51;12.09.2013 17:29:51;99;Alexia;Kansas;Cameroon;0.48;47.52;United States;Africa;Female;Female
+Jana;12.09.2013 18:30:38;12.09.2013 18:46:38;16;Alexia;Kansas;Cameroon;0.48;7.68;United States;Africa;Female;Female
+Jana;12.09.2013 18:31:06;12.09.2013 19:03:06;32;Alexia;Kansas;Cameroon;0.48;15.36;United States;Africa;Female;Female
+Jana;12.09.2013 18:31:26;12.09.2013 18:45:26;14;Alexia;Kansas;Cameroon;0.48;6.72;United States;Africa;Female;Female
+Niklas;13.09.2013 04:38:40;13.09.2013 05:10:40;32;Alexia;Florida;Cameroon;0.48;15.36;United States;Africa;Male;Female
+Mia;13.09.2013 04:38:40;13.09.2013 06:34:40;116;Alexia;Nebraska;Cameroon;0.48;55.68;United States;Africa;Female;Female
+Mia;13.09.2013 04:38:40;13.09.2013 05:56:40;78;Alexia;Nebraska;Cameroon;0.48;37.44;United States;Africa;Female;Female
+Jana;13.09.2013 04:42:33;13.09.2013 04:51:33;9;Alexia;Kansas;Cameroon;0.48;4.32;United States;Africa;Female;Female
+Anton;13.09.2013 05:01:25;13.09.2013 06:09:25;68;Alexia;Arkansas;Cameroon;0.48;32.64;United States;Africa;Male;Female
+Anton;13.09.2013 05:02:03;13.09.2013 05:13:03;11;Alexia;Arkansas;Cameroon;0.48;5.28;United States;Africa;Male;Female
+Fabian;13.09.2013 17:15:39;13.09.2013 18:45:39;90;Soraya;Washington;Algeria;0.48;43.20;United States;Africa;Male;Female
+Jana;13.09.2013 20:56:31;13.09.2013 21:26:31;30;Diana;Kansas;Falkland Islands;0.45;13.50;United States;South America;Female;Female
+Jana;13.09.2013 22:16:41;13.09.2013 22:23:41;7;Diana;Kansas;Falkland Islands;0.45;3.15;United States;South America;Female;Female
+Jana;13.09.2013 22:17:43;13.09.2013 22:36:43;19;Diana;Kansas;Falkland Islands;0.45;8.55;United States;South America;Female;Female
+Jana;13.09.2013 22:18:31;13.09.2013 22:26:31;8;Diana;Kansas;Falkland Islands;0.45;3.60;United States;South America;Female;Female
+Jana;13.09.2013 22:48:44;13.09.2013 23:16:44;28;Diana;Kansas;Falkland Islands;0.45;12.60;United States;South America;Female;Female
+Fabian;13.09.2013 23:00:14;14.09.2013 00:25:14;85;Soraya;Washington;Algeria;0.48;40.80;United States;Africa;Male;Female
+Fabian;14.09.2013 01:16:20;14.09.2013 02:12:20;56;Soraya;Washington;Algeria;0.48;26.88;United States;Africa;Male;Female
+Fabian;14.09.2013 01:17:53;14.09.2013 03:12:53;115;Soraya;Washington;Algeria;0.48;55.20;United States;Africa;Male;Female
+Fabian;14.09.2013 01:36:45;14.09.2013 01:44:45;8;Soraya;Washington;Algeria;0.48;3.84;United States;Africa;Male;Female
+Jana;14.09.2013 01:43:50;14.09.2013 01:50:50;7;Alexia;Kansas;Cameroon;0.48;3.36;United States;Africa;Female;Female
+Jana;14.09.2013 01:45:05;14.09.2013 02:02:05;17;Alexia;Kansas;Cameroon;0.48;8.16;United States;Africa;Female;Female
+Jana;14.09.2013 01:46:46;14.09.2013 01:49:46;3;Alexia;Kansas;Cameroon;0.48;1.44;United States;Africa;Female;Female
+Jana;14.09.2013 03:02:12;14.09.2013 03:53:12;51;Alexia;Kansas;Cameroon;0.48;24.48;United States;Africa;Female;Female
+Jana;14.09.2013 03:21:36;14.09.2013 04:03:36;42;Alexia;Kansas;Cameroon;0.48;20.16;United States;Africa;Female;Female
+Jana;14.09.2013 20:23:52;14.09.2013 21:57:52;94;Alexia;Kansas;Cameroon;0.48;45.12;United States;Africa;Female;Female
+Jana;14.09.2013 20:39:12;14.09.2013 21:48:12;69;Alexia;Kansas;Cameroon;0.48;33.12;United States;Africa;Female;Female
+Jana;14.09.2013 23:30:16;14.09.2013 23:35:16;5;Alexia;Kansas;Cameroon;0.48;2.40;United States;Africa;Female;Female

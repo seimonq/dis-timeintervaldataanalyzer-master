@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<model xmlns="http://dev.meisen.net/xsd/dissertation/model"
+       xmlns:csv="http://dev.meisen.net/xsd/dissertation/model/csv"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:dim="http://dev.meisen.net/xsd/dissertation/dimension"
+       
+       xsi:schemaLocation="http://dev.meisen.net/xsd/dissertation/model      http://dev.meisen.net/xsd/dissertation/tidaModel.xsd
+                           http://dev.meisen.net/xsd/dissertation/model/csv  http://dev.meisen.net/xsd/dissertation/tidaCsvExtension.xsd
+						   http://dev.meisen.net/xsd/dissertation/dimension  http://dev.meisen.net/xsd/dissertation/tidaDimension.xsd"
+       offlinemode="false"
+
+       id="datasetTida">
+
+  <config> 
+    
+    <dataretrievers>
+      <dataretriever id="csv_test2">
+        <csv:config file="/net/kern/master/preaggregates/tida_1000.csv" classpath="true" separator=";" />
+		</dataretriever>
+    </dataretrievers>
+  </config>
+  
+  <time>
+    <timeline start="30.12.2007" end="05.01.2008" granularity="MINUTE" />
+  </time>
+  
+  <meta>
+    <descriptors>
+	  <string id="PERSON"   name="PERSON"   failonduplicates="false" null="false" />
+	  <string id="TASKTYPE" name="TASKTYPE" failonduplicates="false" null="false" />
+      <string id="WORKAREA" name="WORKAREA" failonduplicates="false" null="false" />
+
+    </descriptors>
+	
+	<entries>
+		  <entry descriptor="PERSON" dataretriever="csv_test2">
+				<csv:selector position="2" />
+		  </entry>
+		  <entry descriptor="TASKTYPE" dataretriever="csv_test2">
+				<csv:selector position="3" />
+		  </entry>
+		  <entry descriptor="WORKAREA" dataretriever="csv_test2">
+				<csv:selector position="4" />
+		  </entry>
+	</entries>
+  </meta>
+
+  
+  <dim:dimensions>
+	  <dim:timedimension id="TIME">
+		<dim:hierarchy id="RASTER" all="Everytime" timezone="DST">
+			<dim:level id="MONTH" template="MONTHS" />
+			<dim:level id="DAY" template="DAYS" />
+			<dim:level id="HOUR" template="HOURS" />
+			<dim:level id="MINUTE" template="MINUTES" />
+		</dim:hierarchy>
+	  </dim:timedimension>
+  </dim:dimensions>
+ 
+  <structure>
+    <meta position="2" descriptor="PERSON" />
+    <meta position="3" descriptor="TASKTYPE" />
+    <meta position="4" descriptor="WORKAREA" />
+    
+    <interval position="5" type="start" />
+    <interval position="6" type="end" />
+  </structure>
+  
+  <data metahandling="create" intervalhandling="boundariesWhenNull">
+    <dataset dataretriever="csv_test2" />
+  </data>
+</model>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- OfflineMode (i.e. what should happen if a dataretriever is not available)
+     is optional and can be one of the following values (case-insensitive):
+      + true, y, yes
+      + false, n, no
+      + auto
+  -->
+<model xmlns="http://dev.meisen.net/xsd/dissertation/model"
+       xmlns:db="http://dev.meisen.net/xsd/dissertation/model/db"
+       xmlns:fxd="http://dev.meisen.net/xsd/dissertation/model/fxd"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       
+       xsi:schemaLocation="http://dev.meisen.net/xsd/dissertation/model     http://dev.meisen.net/xsd/dissertation/tidaModel.xsd
+                           http://dev.meisen.net/xsd/dissertation/model/db  http://dev.meisen.net/xsd/dissertation/tidaDatabaseExtension.xsd
+                           http://dev.meisen.net/xsd/dissertation/model/fxd http://dev.meisen.net/xsd/dissertation/tidaFixedStructureExtension.xsd"
+
+       offlinemode="false"
+
+       id="fullModelDataFromExternal">
+
+  <config>
+    <caches>
+      <!-- Define the cache to be used for metadata.
+
+           The following cache implementations are available:
+            + net.meisen.dissertation.impl.cache.MemoryMetaDataCache
+            + net.meisen.dissertation.impl.cache.FileMetaDataCache
+        -->
+      <metadata implementation="net.meisen.dissertation.model.descriptors.mock.MockMetaDataCache" />
+      
+      <!-- Define the cache to be used for bitmaps.
+
+           The following cache implementations are available:
+            + net.meisen.dissertation.impl.cache.MemoryBitmapCache
+            + net.meisen.dissertation.impl.cache.MapDbBitmapCache
+            + net.meisen.dissertation.impl.cache.FileBitmapCache
+        -->
+      <bitmap implementation="net.meisen.dissertation.impl.cache.MemoryBitmapCache" />
+      
+      <!-- Define the cache to be used for fact-sets.
+
+           The following cache implementations are available:
+            + net.meisen.dissertation.impl.cache.MemoryFactDescriptorModelSetCache
+            + net.meisen.dissertation.impl.cache.FileFactDescriptorModelSetCache
+        -->
+      <factsets implementation="net.meisen.dissertation.impl.cache.MemoryFactDescriptorModelSetCache" />
+      
+      <!-- Define the cache to be used for records.
+
+           The following cache implementations are available:
+            + net.meisen.dissertation.impl.cache.IdsOnlyDataRecordCache
+            + net.meisen.dissertation.impl.cache.MemoryDataRecordCache
+            + net.meisen.dissertation.impl.cache.MapDbDataRecordCache
+        -->
+      <records implementation="net.meisen.dissertation.impl.cache.IdsOnlyDataRecordCache" />
+    </caches>
+  
+    <factories>
+      <!-- Define the factory to be used to determine which IndexFactory
+           to be used.
+           
+           The following factories are available by default:
+            + net.meisen.dissertation.impl.indexes.IndexFactory
+        -->
+      <indexes implementation="net.meisen.dissertation.impl.indexes.IndexFactory" />
+      
+      <!-- Define the factory to be used to determine which MapperFactory
+           to be used.
+           
+           The following factories are available by default:
+            + net.meisen.dissertation.impl.time.mapper.MapperFactory
+        -->
+      <mappers implementation="net.meisen.dissertation.impl.time.mapper.MapperFactory" />
+    </factories>
+   
+    <!-- Define the pre-processer used to modify the incoming record.
+      
+         The following implementations are available by default:
+          + net.meisen.dissertation.impl.dataintegration.IdentityPreProcessor
+          + net.meisen.dissertation.impl.dataintegration.ScriptPreProcssor
+      -->
+    <preprocessor implementation="net.meisen.dissertation.impl.dataintegration.IdentityPreProcessor" />
+    
+    <!-- Define additional data retriever, i.e. possibilities to load data from external sources, 
+         by default the following id-prefixes are mapped to the specified implementation:
+          + db_       is mapped to     net.meisen.dissertation.impl.dataretriever.DbDataRetriever
+          + fxd_      is mapped to     net.meisen.dissertation.impl.dataretriever.FixedStructureDataRetriever
+      -->
+    <dataretrievers>
+      <dataretriever id="db_butFixed" implementation="net.meisen.dissertation.impl.dataretriever.FixedStructureDataRetriever" />
+      <dataretriever id="myOwnId" implementation="net.meisen.dissertation.impl.dataretriever.FixedStructureDataRetriever">
+        <fxd:record>
+          <fxd:field name="DOUBLE" type="java.lang.Double" />
+        </fxd:record>
+      </dataretriever>
+      <dataretriever id="fxd_test">
+        <fxd:record>
+          <fxd:field name="FIX_DOUBLE" value="1.00" type="java.lang.Double" />
+          <fxd:field name="FIX_STRING" value="Hello World" type="java.lang.String" />
+          <fxd:field name="FIX_INTEGER" value="1" type="java.lang.Integer" />
+          <fxd:field name="FIX_LONG" value="10000" type="java.lang.Long" />
+          
+          <fxd:field name="RND_DOUBLE" type="java.lang.Double" />
+          <fxd:field name="RND_STRING" type="java.lang.String" />
+          <fxd:field name="RND_INTEGER" type="java.lang.Integer" />
+          <fxd:field name="RND_LONG" type="java.lang.Long" />
+          
+          <fxd:field name="NULL_INTEGER" type="java.lang.Integer" random="false" />
+        </fxd:record>
+      </dataretriever>
+      <dataretriever id="db_test">
+        <db:connection type="jdbc" url="jdbc:hsqldb:hsql://localhost:6666/tidaTestData" driver="org.hsqldb.jdbcDriver" username="SA" password="" />
+      </dataretriever>
+    </dataretrievers>
+  </config>
+  
+  <time>
+    <timeline start="01.04.2010" end="29.04.2010" granularity="MINUTE" />
+  </time>
+  
+  <meta>
+    <!-- As identifier-factory the following implementations are available:
+          + net.meisen.dissertation.impl.idfactories.IntegerIdsFactory
+          + net.meisen.dissertation.impl.idfactories.LongIdsFactory
+          + net.meisen.dissertation.impl.idfactories.UuIdsFactory
+          
+         The null-attribute (true or false) defines if null values are allowed within 
+         the model.
+         The failonduplicates-attributes (true or false) specifies if duplicates are 
+         just ignored or if an exception is thrown.
+      -->
+    <descriptors>
+      <string id="R1" name="person" failonduplicates="true" null="false" idfactory="net.meisen.dissertation.impl.idfactories.IntegerIdsFactory" />
+      <string id="R2" name="toy" />
+      <string id="R3" />
+    
+      <string id="D1" name="funFactor" />
+      <integer id="D2" name="smiles" />
+      <string id="D3" />
+      <string id="D4" />
+    </descriptors>
+
+    <entries>
+      <entry descriptor="R1" value="Edison" />
+      <entry descriptor="R2" dataretriever="db_test">
+        <db:query>SELECT DISTINCT CONVERT(COUNTER, SQL_VARCHAR) FROM TB_TESTDATA</db:query>
+      </entry>
+      <entry descriptor="R3" value="NoValue" />
+
+      <entry descriptor="D1" dataretriever="db_test">
+        <db:query language="sql">SELECT DISTINCT FIXED FROM TB_TESTDATA</db:query>
+      </entry>
+      <entry descriptor="D2" value="2" />
+      <entry descriptor="D3" value="Some Value" />     
+      <entry descriptor="D4" dataretriever="fxd_test">
+        <fxd:query amount="1" />
+      </entry>
+    </entries>
+  </meta>
+  
+  <!-- MetaDataHandling (i.e. what has to be done if no Descriptor is available so far)
+       is optional and can be one of the following values (case-insensitive):
+        + handleAsNull, null
+        + createDescriptor, create, add
+        + failOnError, fail
+        
+       IntervalDataHandling (i.e. what has to be done if an interval-value is null)
+        + boundariesWhenNull, boundaries
+        + failOnNull, fail
+    -->
+  <data metahandling="create" intervalhandling="boundariesWhenNull" />
+</model>
