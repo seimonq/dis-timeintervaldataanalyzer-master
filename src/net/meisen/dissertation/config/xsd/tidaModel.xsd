@@ -1,127 +1,122 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://dev.meisen.net/xsd/dissertation/model" xmlns:types="http://dev.meisen.net/xsd/dissertation/types" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://dev.meisen.net/xsd/dissertation/model">
 
-<xs:schema xmlns="http://dev.meisen.net/xsd/dissertation/model" 
-           xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-           xmlns:types="http://dev.meisen.net/xsd/dissertation/types"
-           
-           targetNamespace="http://dev.meisen.net/xsd/dissertation/model" attributeFormDefault="unqualified" elementFormDefault="qualified">
-
-  <xs:import namespace="http://dev.meisen.net/xsd/dissertation/types" schemaLocation="http://dev.meisen.net/xsd/dissertation/tidaTypes.xsd" />
+  <xs:import namespace="http://dev.meisen.net/xsd/dissertation/types" schemaLocation="http://dev.meisen.net/xsd/dissertation/tidaTypes.xsd"/>
 
   <xs:element name="model">
     <xs:complexType>
       <xs:sequence>
 
-        <xs:element name="config" minOccurs="0">
+        <xs:element minOccurs="0" name="config">
           <xs:complexType>
           
             <xs:sequence>
-              <xs:element name="caches" minOccurs="0">
+              <xs:element minOccurs="0" name="caches">
                 <xs:complexType>
                 
                   <xs:sequence>
-                    <xs:element name="identifier" minOccurs="0">
+                    <xs:element minOccurs="0" name="identifier">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:any namespace="##any" processContents="strict" minOccurs="0" maxOccurs="unbounded" />
+                          <xs:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="strict"/>
                         </xs:sequence>
 
-                        <xs:attribute name="implementation" type="types:javaClass" use="required" />
+                        <xs:attribute name="implementation" type="types:javaClass" use="required"/>
                       </xs:complexType>
                     </xs:element>
                   
-                    <xs:element name="metadata" minOccurs="0">
+                    <xs:element minOccurs="0" name="metadata">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:any namespace="##any" processContents="strict" minOccurs="0" maxOccurs="unbounded" />
+                          <xs:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="strict"/>
                         </xs:sequence>
 
-                        <xs:attribute name="implementation" type="types:javaClass" use="required" />
+                        <xs:attribute name="implementation" type="types:javaClass" use="required"/>
                       </xs:complexType>
                     </xs:element>
 
-                    <xs:element name="bitmap" minOccurs="0">
+                    <xs:element minOccurs="0" name="bitmap">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:any namespace="##any" processContents="strict" minOccurs="0" maxOccurs="unbounded" />
+                          <xs:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="strict"/>
                         </xs:sequence>
 
-                        <xs:attribute name="implementation" type="types:javaClass" use="required" />
-                      </xs:complexType>
-                    </xs:element>
-                    
-                    <xs:element name="factsets" minOccurs="0">
-                      <xs:complexType>
-                        <xs:sequence>
-                          <xs:any namespace="##any" processContents="strict" minOccurs="0" maxOccurs="unbounded" />
-                        </xs:sequence>
-
-                        <xs:attribute name="implementation" type="types:javaClass" use="required" />
+                        <xs:attribute name="implementation" type="types:javaClass" use="required"/>
                       </xs:complexType>
                     </xs:element>
                     
-                    <xs:element name="records" minOccurs="0">
+                    <xs:element minOccurs="0" name="factsets">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:any namespace="##any" processContents="strict" minOccurs="0" maxOccurs="unbounded" />
+                          <xs:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="strict"/>
                         </xs:sequence>
 
-                        <xs:attribute name="implementation" type="types:javaClass" use="required" />
+                        <xs:attribute name="implementation" type="types:javaClass" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                    
+                    <xs:element minOccurs="0" name="records">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="strict"/>
+                        </xs:sequence>
+
+                        <xs:attribute name="implementation" type="types:javaClass" use="required"/>
                       </xs:complexType>
                     </xs:element>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
             
-              <xs:element name="factories" minOccurs="0">
+              <xs:element minOccurs="0" name="factories">
                 <xs:complexType>
 
                   <xs:sequence>
-                    <xs:element name="indexes" minOccurs="0">
+                    <xs:element minOccurs="0" name="indexes">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:any namespace="##any" processContents="strict" minOccurs="0" maxOccurs="unbounded" />
+                          <xs:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="strict"/>
                         </xs:sequence>
                         
-                        <xs:attribute name="implementation" type="types:javaClass" use="required" />
+                        <xs:attribute name="implementation" type="types:javaClass" use="required"/>
                       </xs:complexType>
                     </xs:element>
                     
-                    <xs:element name="mappers" minOccurs="0">
+                    <xs:element minOccurs="0" name="mappers">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:any namespace="##any" processContents="strict" minOccurs="0" maxOccurs="unbounded" />
+                          <xs:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="strict"/>
                         </xs:sequence>
                         
-                        <xs:attribute name="implementation" type="types:javaClass" use="required" />
+                        <xs:attribute name="implementation" type="types:javaClass" use="required"/>
                       </xs:complexType>
                     </xs:element>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
               
-              <xs:element name="preprocessor" minOccurs="0">
+              <xs:element minOccurs="0" name="preprocessor">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:any namespace="##any" processContents="strict" minOccurs="0" maxOccurs="1" />
+                    <xs:any maxOccurs="1" minOccurs="0" namespace="##any" processContents="strict"/>
                   </xs:sequence>
 
-                  <xs:attribute name="implementation" type="types:javaClass" use="required" />
+                  <xs:attribute name="implementation" type="types:javaClass" use="required"/>
                 </xs:complexType>
               </xs:element>
 
-              <xs:element name="dataretrievers" minOccurs="0">
+              <xs:element minOccurs="0" name="dataretrievers">
                 <xs:complexType>
 
                   <xs:sequence>
-                    <xs:element name="dataretriever" minOccurs="0" maxOccurs="unbounded">
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="dataretriever">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:any namespace="##other" processContents="strict" minOccurs="0" maxOccurs="1" />
+                          <xs:any maxOccurs="1" minOccurs="0" namespace="##other" processContents="strict"/>
                         </xs:sequence>
 
-                        <xs:attribute name="id" type="types:identifier" use="required" />
-                        <xs:attribute name="implementation" type="types:javaClass" use="optional" />
+                        <xs:attribute name="id" type="types:identifier" use="required"/>
+                        <xs:attribute name="implementation" type="types:javaClass" use="optional"/>
                       </xs:complexType>
                     </xs:element>
                   </xs:sequence>
@@ -131,31 +126,31 @@
           </xs:complexType>
         </xs:element>
 
-        <xs:element name="time" minOccurs="0">
+        <xs:element minOccurs="0" name="time">
           <xs:complexType>
             <xs:sequence>
             
-              <xs:element name="timeline" minOccurs="0">
+              <xs:element minOccurs="0" name="timeline">
                 <xs:complexType>
-                  <xs:attribute name="start" type="types:dateOrNumber" use="optional" />
-                  <xs:attribute name="end" type="types:dateOrNumber" use="optional" />
-                  <xs:attribute name="duration" type="xs:positiveInteger" use="optional" />
-                  <xs:attribute name="granularity" type="types:nonEmptyStringWithoutWhitespaces" use="optional" />
-                  <xs:attribute name="durationgranularity" type="types:nonEmptyStringWithoutWhitespaces" use="optional" />
+                  <xs:attribute name="start" type="types:dateOrNumber" use="optional"/>
+                  <xs:attribute name="end" type="types:dateOrNumber" use="optional"/>
+                  <xs:attribute name="duration" type="xs:positiveInteger" use="optional"/>
+                  <xs:attribute name="granularity" type="types:nonEmptyStringWithoutWhitespaces" use="optional"/>
+                  <xs:attribute name="durationgranularity" type="types:nonEmptyStringWithoutWhitespaces" use="optional"/>
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
 
-        <xs:element name="meta" minOccurs="0">
+        <xs:element minOccurs="0" name="meta">
           <xs:complexType>
             <xs:sequence>
 
-              <xs:element name="descriptors" minOccurs="0">
+              <xs:element minOccurs="0" name="descriptors">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:any namespace="##any" processContents="strict" minOccurs="0" maxOccurs="unbounded" />
+                    <xs:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="strict"/>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
@@ -164,15 +159,15 @@
                 <xs:complexType>
 
                   <xs:sequence>
-                    <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="entry">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:any namespace="##other" processContents="strict" minOccurs="0" maxOccurs="1" />
+                          <xs:any maxOccurs="1" minOccurs="0" namespace="##other" processContents="strict"/>
                         </xs:sequence>
 
-                        <xs:attribute name="descriptor" type="types:identifier" use="required" />
-                        <xs:attribute name="value" type="xs:string" use="optional" />
-                        <xs:attribute name="dataretriever" type="types:identifier" use="optional" />
+                        <xs:attribute name="descriptor" type="types:identifier" use="required"/>
+                        <xs:attribute name="value" type="xs:string" use="optional"/>
+                        <xs:attribute name="dataretriever" type="types:identifier" use="optional"/>
                       </xs:complexType>
                     </xs:element>
                   </xs:sequence>
@@ -183,28 +178,28 @@
         </xs:element>
         
         <!-- allow the dimensions here -->
-        <xs:any namespace="http://dev.meisen.net/xsd/dissertation/dimension" processContents="strict" minOccurs="0" maxOccurs="1" />
+        <xs:any maxOccurs="1" minOccurs="0" namespace="http://dev.meisen.net/xsd/dissertation/dimension" processContents="strict"/>
         
-        <xs:element name="structure" minOccurs="0">
+        <xs:element minOccurs="0" name="structure">
           <xs:complexType>
             <xs:sequence>
 
-              <xs:element name="meta" minOccurs="0" maxOccurs="unbounded">
+              <xs:element maxOccurs="unbounded" minOccurs="0" name="meta">
                 <xs:complexType>
                   <xs:complexContent>
                     <xs:extension base="structurelement">
-                      <xs:attribute name="descriptor" type="types:identifier" use="required" />
+                      <xs:attribute name="descriptor" type="types:identifier" use="required"/>
                     </xs:extension>
                   </xs:complexContent>
                 </xs:complexType>
               </xs:element>
 
-              <xs:element name="interval" minOccurs="0" maxOccurs="2">
+              <xs:element maxOccurs="2" minOccurs="0" name="interval">
                 <xs:complexType>
                   <xs:complexContent>
                     <xs:extension base="structurelement">
-                      <xs:attribute name="type" type="types:identifier" use="required" />
-                      <xs:attribute name="inclusive" type="xs:boolean" use="optional" />
+                      <xs:attribute name="type" type="types:identifier" use="required"/>
+                      <xs:attribute name="inclusive" type="xs:boolean" use="optional"/>
                     </xs:extension>
                   </xs:complexContent>
                 </xs:complexType>
@@ -217,56 +212,56 @@
         <xs:element name="data">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="dataset" minOccurs="0" maxOccurs="unbounded">
+              <xs:element maxOccurs="unbounded" minOccurs="0" name="dataset">
                 <xs:complexType>
                   <xs:choice>
-                    <xs:any namespace="##other" processContents="strict" minOccurs="0" maxOccurs="1" />
-                    <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+                    <xs:any maxOccurs="1" minOccurs="0" namespace="##other" processContents="strict"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="entry">
                       <xs:complexType>
-                        <xs:attribute name="type" type="types:nonEmptyStringWithoutWhitespaces" use="optional" />
-                        <xs:attribute name="class" type="types:javaClass" use="optional" />
-                        <xs:attribute name="value" type="xs:string" use="optional" />
-                        <xs:attribute name="name" type="types:nonEmptyStringWithoutWhitespaces" use="optional" />
-                        <xs:attribute name="position" type="xs:positiveInteger" use="optional" />
+                        <xs:attribute name="type" type="types:nonEmptyStringWithoutWhitespaces" use="optional"/>
+                        <xs:attribute name="class" type="types:javaClass" use="optional"/>
+                        <xs:attribute name="value" type="xs:string" use="optional"/>
+                        <xs:attribute name="name" type="types:nonEmptyStringWithoutWhitespaces" use="optional"/>
+                        <xs:attribute name="position" type="xs:positiveInteger" use="optional"/>
                       </xs:complexType>
                     </xs:element>
                   </xs:choice>
 
-                  <xs:attribute name="dataretriever" type="types:identifier" use="optional" />
+                  <xs:attribute name="dataretriever" type="types:identifier" use="optional"/>
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
             
-            <xs:attribute name="metahandling" type="xs:string" use="optional" />
-            <xs:attribute name="intervalhandling" type="xs:string" use="optional" />
+            <xs:attribute name="metahandling" type="xs:string" use="optional"/>
+            <xs:attribute name="intervalhandling" type="xs:string" use="optional"/>
           </xs:complexType>
         </xs:element>
       </xs:sequence>
 
-      <xs:attribute name="id" type="types:identifier" use="optional" />
-      <xs:attribute name="name" type="xs:string" use="optional" />
-      <xs:attribute name="folder" type="xs:string" use="optional" />
-      <xs:attribute name="offlinemode" type="xs:string" use="optional" />
+      <xs:attribute name="id" type="types:identifier" use="optional"/>
+      <xs:attribute name="name" type="xs:string" use="optional"/>
+      <xs:attribute name="folder" type="xs:string" use="optional"/>
+      <xs:attribute name="offlinemode" type="xs:string" use="optional"/>
     </xs:complexType>
   </xs:element>
 
   <xs:complexType name="descriptor">
-    <xs:attribute name="id" type="types:identifier" use="required" />
-    <xs:attribute name="null" type="xs:boolean" use="optional" />
-    <xs:attribute name="failonduplicates" type="xs:boolean" use="optional" />
-    <xs:attribute name="name" type="xs:string" use="optional" />
-    <xs:attribute name="idfactory" type="types:javaClass" use="optional" />
+    <xs:attribute name="id" type="types:identifier" use="required"/>
+    <xs:attribute name="null" type="xs:boolean" use="optional"/>
+    <xs:attribute name="failonduplicates" type="xs:boolean" use="optional"/>
+    <xs:attribute name="name" type="xs:string" use="optional"/>
+    <xs:attribute name="idfactory" type="types:javaClass" use="optional"/>
   </xs:complexType>
   
   <xs:complexType name="structurelement">
-    <xs:attribute name="name" type="types:nonEmptyStringWithoutWhitespaces" use="optional" />
-    <xs:attribute name="position" type="xs:positiveInteger" use="optional" />
+    <xs:attribute name="name" type="types:nonEmptyStringWithoutWhitespaces" use="optional"/>
+    <xs:attribute name="position" type="xs:positiveInteger" use="optional"/>
   </xs:complexType>
   
-  <xs:element name="object" type="descriptor" />
-  <xs:element name="string" type="descriptor" />
-  <xs:element name="double" type="descriptor" />
-  <xs:element name="long" type="descriptor" />
-  <xs:element name="integer" type="descriptor" />
-  <xs:element name="resource" type="descriptor" />
+  <xs:element name="object" type="descriptor"/>
+  <xs:element name="string" type="descriptor"/>
+  <xs:element name="double" type="descriptor"/>
+  <xs:element name="long" type="descriptor"/>
+  <xs:element name="integer" type="descriptor"/>
+  <xs:element name="resource" type="descriptor"/>
 </xs:schema>

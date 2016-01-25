@@ -1,186 +1,184 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://dev.meisen.net/xsd/dissertation/config" xmlns:types="http://dev.meisen.net/xsd/dissertation/types" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://dev.meisen.net/xsd/dissertation/config">
 
-<xs:schema xmlns="http://dev.meisen.net/xsd/dissertation/config" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:types="http://dev.meisen.net/xsd/dissertation/types"
-           targetNamespace="http://dev.meisen.net/xsd/dissertation/config" attributeFormDefault="unqualified" elementFormDefault="qualified">
-
-  <xs:import namespace="http://dev.meisen.net/xsd/dissertation/types" schemaLocation="http://dev.meisen.net/xsd/dissertation/tidaTypes.xsd" />
+  <xs:import namespace="http://dev.meisen.net/xsd/dissertation/types" schemaLocation="http://dev.meisen.net/xsd/dissertation/tidaTypes.xsd"/>
 
   <xs:element name="config">
     <xs:complexType>
       <xs:sequence>
       
-        <xs:element name="location" minOccurs="0">
+        <xs:element minOccurs="0" name="location">
           <xs:complexType>
-            <xs:attribute name="folder" type="xs:string" use="required" />
+            <xs:attribute name="folder" type="xs:string" use="required"/>
           </xs:complexType>
         </xs:element>
         
-        <xs:element name="auth" minOccurs="0">
+        <xs:element minOccurs="0" name="auth">
           <xs:complexType>
           
             <xs:sequence>
 
-              <xs:element name="manager" minOccurs="1">
+              <xs:element minOccurs="1" name="manager">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:any namespace="##any" processContents="strict" minOccurs="0" maxOccurs="unbounded" />
+                    <xs:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="strict"/>
                   </xs:sequence>
 
-                  <xs:attribute name="implementation" type="types:javaClass" use="required" />
+                  <xs:attribute name="implementation" type="types:javaClass" use="required"/>
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
 
-        <xs:element name="caches" minOccurs="0">
+        <xs:element minOccurs="0" name="caches">
           <xs:complexType>
           
             <xs:sequence>
-              <xs:element name="identifier" minOccurs="0">
+              <xs:element minOccurs="0" name="identifier">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:any namespace="##any" processContents="strict" minOccurs="0" maxOccurs="unbounded" />
+                    <xs:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="strict"/>
                   </xs:sequence>
 
-                  <xs:attribute name="implementation" type="types:javaClass" use="required" />
+                  <xs:attribute name="implementation" type="types:javaClass" use="required"/>
                 </xs:complexType>
               </xs:element>
             
-              <xs:element name="metadata" minOccurs="0">
+              <xs:element minOccurs="0" name="metadata">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:any namespace="##any" processContents="strict" minOccurs="0" maxOccurs="unbounded" />
+                    <xs:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="strict"/>
                   </xs:sequence>
 
-                  <xs:attribute name="implementation" type="types:javaClass" use="required" />
+                  <xs:attribute name="implementation" type="types:javaClass" use="required"/>
                 </xs:complexType>
               </xs:element>
 
-              <xs:element name="bitmap" minOccurs="0">
+              <xs:element minOccurs="0" name="bitmap">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:any namespace="##any" processContents="strict" minOccurs="0" maxOccurs="unbounded" />
+                    <xs:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="strict"/>
                   </xs:sequence>
 
-                  <xs:attribute name="implementation" type="types:javaClass" use="required" />
-                </xs:complexType>
-              </xs:element>
-              
-              <xs:element name="factsets" minOccurs="0">
-                <xs:complexType>
-                  <xs:sequence>
-                    <xs:any namespace="##any" processContents="strict" minOccurs="0" maxOccurs="unbounded" />
-                  </xs:sequence>
-
-                  <xs:attribute name="implementation" type="types:javaClass" use="required" />
+                  <xs:attribute name="implementation" type="types:javaClass" use="required"/>
                 </xs:complexType>
               </xs:element>
               
-              <xs:element name="records" minOccurs="0">
+              <xs:element minOccurs="0" name="factsets">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:any namespace="##any" processContents="strict" minOccurs="0" maxOccurs="unbounded" />
+                    <xs:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="strict"/>
                   </xs:sequence>
 
-                  <xs:attribute name="implementation" type="types:javaClass" use="required" />
+                  <xs:attribute name="implementation" type="types:javaClass" use="required"/>
+                </xs:complexType>
+              </xs:element>
+              
+              <xs:element minOccurs="0" name="records">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="strict"/>
+                  </xs:sequence>
+
+                  <xs:attribute name="implementation" type="types:javaClass" use="required"/>
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
 
-        <xs:element name="factories" minOccurs="0">
+        <xs:element minOccurs="0" name="factories">
           <xs:complexType>
 
             <xs:sequence>
-              <xs:element name="indexes" minOccurs="0">
+              <xs:element minOccurs="0" name="indexes">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:any namespace="##any" processContents="strict" minOccurs="0" maxOccurs="unbounded" />
+                    <xs:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="strict"/>
                   </xs:sequence>
                   
-                  <xs:attribute name="implementation" type="types:javaClass" use="required" />
+                  <xs:attribute name="implementation" type="types:javaClass" use="required"/>
                 </xs:complexType>
               </xs:element>
 
-              <xs:element name="mappers" minOccurs="0">
+              <xs:element minOccurs="0" name="mappers">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:any namespace="##any" processContents="strict" minOccurs="0" maxOccurs="unbounded" />
+                    <xs:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="strict"/>
                   </xs:sequence>
                   
-                  <xs:attribute name="implementation" type="types:javaClass" use="required" />
+                  <xs:attribute name="implementation" type="types:javaClass" use="required"/>
                 </xs:complexType>
               </xs:element>
 
-              <xs:element name="granularities" minOccurs="0">
+              <xs:element minOccurs="0" name="granularities">
                 <xs:complexType>
-                  <xs:attribute name="implementation" type="types:javaClass" use="required" />
+                  <xs:attribute name="implementation" type="types:javaClass" use="required"/>
                 </xs:complexType>
               </xs:element>
 
-              <xs:element name="queries" minOccurs="0">
+              <xs:element minOccurs="0" name="queries">
                 <xs:complexType>
-                  <xs:attribute name="implementation" type="types:javaClass" use="required" />
+                  <xs:attribute name="implementation" type="types:javaClass" use="required"/>
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
         
-        <xs:element name="aggregations" minOccurs="0">
+        <xs:element minOccurs="0" name="aggregations">
           <xs:complexType>
 
             <xs:sequence>
-              <xs:element name="function" minOccurs="1" maxOccurs="unbounded">
+              <xs:element maxOccurs="unbounded" minOccurs="1" name="function">
                 <xs:complexType>
-                  <xs:attribute name="implementation" type="types:javaClass" use="required" />
+                  <xs:attribute name="implementation" type="types:javaClass" use="required"/>
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
           </xs:complexType>
 		</xs:element>
 		
-		<xs:element name="timetemplates" minOccurs="0">
+		<xs:element minOccurs="0" name="timetemplates">
           <xs:complexType>
 
             <xs:sequence>
-              <xs:element name="template" minOccurs="1" maxOccurs="unbounded">
+              <xs:element maxOccurs="unbounded" minOccurs="1" name="template">
                 <xs:complexType>
-                  <xs:attribute name="implementation" type="types:javaClass" use="required" />
+                  <xs:attribute name="implementation" type="types:javaClass" use="required"/>
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
           </xs:complexType>
 		</xs:element>
 		
-		<xs:element name="server" minOccurs="0">
+		<xs:element minOccurs="0" name="server">
           <xs:complexType>
 
             <xs:sequence>
-              <xs:element name="http" minOccurs="0">
+              <xs:element minOccurs="0" name="http">
                 <xs:complexType>
-                  <xs:attribute name="port" type="xs:positiveInteger" use="optional" />
-                  <xs:attribute name="timeout" type="xs:positiveInteger" use="optional" />
-                  <xs:attribute name="enable" type="xs:boolean" use="optional" />
-                  <xs:attribute name="docroot" type="xs:string" use="optional" />
-                  <xs:attribute name="tmproot" type="xs:string" use="optional" />
+                  <xs:attribute name="port" type="xs:positiveInteger" use="optional"/>
+                  <xs:attribute name="timeout" type="xs:positiveInteger" use="optional"/>
+                  <xs:attribute name="enable" type="xs:boolean" use="optional"/>
+                  <xs:attribute name="docroot" type="xs:string" use="optional"/>
+                  <xs:attribute name="tmproot" type="xs:string" use="optional"/>
                 </xs:complexType>
               </xs:element>
               
-              <xs:element name="tsql" minOccurs="0">
+              <xs:element minOccurs="0" name="tsql">
                 <xs:complexType>
-                  <xs:attribute name="port" type="xs:positiveInteger" use="optional" />
-                  <xs:attribute name="timeout" type="xs:positiveInteger" use="optional" />
-                  <xs:attribute name="enable" type="xs:boolean" use="optional" />
+                  <xs:attribute name="port" type="xs:positiveInteger" use="optional"/>
+                  <xs:attribute name="timeout" type="xs:positiveInteger" use="optional"/>
+                  <xs:attribute name="enable" type="xs:boolean" use="optional"/>
                 </xs:complexType>
               </xs:element>
               
-              <xs:element name="control" minOccurs="0">
+              <xs:element minOccurs="0" name="control">
                 <xs:complexType>
-                  <xs:attribute name="port" type="xs:positiveInteger" use="optional" />
-                  <xs:attribute name="enable" type="xs:boolean" use="optional" />
+                  <xs:attribute name="port" type="xs:positiveInteger" use="optional"/>
+                  <xs:attribute name="enable" type="xs:boolean" use="optional"/>
                 </xs:complexType>
               </xs:element>
             </xs:sequence>

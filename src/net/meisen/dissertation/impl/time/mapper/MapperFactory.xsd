@@ -1,23 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://dev.meisen.net/xsd/dissertation/model/mapper" xmlns:types="http://dev.meisen.net/xsd/dissertation/types" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://dev.meisen.net/xsd/dissertation/model/mapper">
 
-<xs:schema xmlns="http://dev.meisen.net/xsd/dissertation/model/mapper" 
-           xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           xmlns:types="http://dev.meisen.net/xsd/dissertation/types"
-           targetNamespace="http://dev.meisen.net/xsd/dissertation/model/mapper" attributeFormDefault="unqualified" elementFormDefault="qualified">
-
-  <xs:import namespace="http://dev.meisen.net/xsd/dissertation/types" schemaLocation="http://dev.meisen.net/xsd/dissertation/tidaTypes.xsd" />
+  <xs:import namespace="http://dev.meisen.net/xsd/dissertation/types" schemaLocation="http://dev.meisen.net/xsd/dissertation/tidaTypes.xsd"/>
 
   <xs:element name="config">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="mapper" minOccurs="1" maxOccurs="unbounded">
+        <xs:element maxOccurs="unbounded" minOccurs="1" name="mapper">
           <xs:complexType>
-            <xs:attribute name="implementation" type="types:javaClass" use="required" />
+            <xs:attribute name="implementation" type="types:javaClass" use="required"/>
           </xs:complexType>
         </xs:element>
       </xs:sequence>
       
-      <xs:attribute name="inheritDefault" type="xs:boolean" use="optional" />
+      <xs:attribute name="inheritDefault" type="xs:boolean" use="optional"/>
     </xs:complexType>
   </xs:element>
 
