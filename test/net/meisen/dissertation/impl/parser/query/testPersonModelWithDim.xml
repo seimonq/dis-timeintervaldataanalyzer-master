@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<model xmlns="http://dev.meisen.net/xsd/dissertation/model"
+       xmlns:dim="http://dev.meisen.net/xsd/dissertation/dimension"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       
+       xsi:schemaLocation="http://dev.meisen.net/xsd/dissertation/model      http://dev.meisen.net/xsd/dissertation/tidaModel.xsd
+                           http://dev.meisen.net/xsd/dissertation/dimension  http://dev.meisen.net/xsd/dissertation/tidaDimension.xsd"
+       
+       id="testPersonModel">
+  
+  <time>
+    <timeline start="03.03.2014" end="04.03.2014 23:59:00" granularity="MINUTE" />
+  </time>
+  
+  <meta>
+    <descriptors>
+      <string id="PERSON" />
+      <string id="LOCATION" null="true" />
+      <integer id="SCREAMS" />
+    </descriptors>
+
+    <entries>
+      <entry descriptor="PERSON" value="Tobias" />
+      <entry descriptor="PERSON" value="Philipp" />
+      <entry descriptor="PERSON" value="Edison" />
+      <entry descriptor="PERSON" value="Debbie" />
+
+      <entry descriptor="LOCATION" value="Aachen" />
+      <entry descriptor="LOCATION" value="Mönchengladbach" />
+      <entry descriptor="LOCATION" value="Undefined" />
+    </entries>
+  </meta>
+  
+  <dim:dimensions>
+    <dim:timedimension id="TIME">
+      <dim:hierarchy id="UTC" name="Default Hierarchy" all="Everytime">
+        <dim:level id="YEAR" template="YEARS" />
+        <dim:level id="MONTH" template="MONTHS" />
+        <dim:level id="DAY" template="DAYS" />
+        <dim:level id="HOUR8" template="RASTER_DAY_480" />
+        <dim:level id="HOUR" name="Hours" template="HOURS" />
+        <dim:level id="MINUTE" template="MINUTES" />
+      </dim:hierarchy>
+      <dim:hierarchy id="GER" all="Always" timezone="Europe/Berlin">
+        <dim:level id="QUARTER" template="RASTER_MONTH_DAY_3" />
+        <dim:level id="MONTH" template="MONTHS" />
+        <dim:level id="DAY" template="DAYS" />
+        <dim:level id="HOUR8" template="RASTER_DAY_480" />
+        <dim:level id="HOUR2" template="RASTER_DAY_120" />
+        <dim:level id="HOUR" template="RASTER_DAY_60" />
+        <dim:level id="MINUTE30" template="RASTER_DAY_30" />
+        <dim:level id="MINUTE10" template="RASTER_DAY_10" />
+        <dim:level id="MINUTE5" template="RASTER_DAY_5" lazy="false" />
+        <dim:level id="MINUTE" template="MINUTES" />
+      </dim:hierarchy>
+      <dim:hierarchy id="US" all="Always" timezone="America/Chicago">
+        <dim:level id="WEEK" template="RASTER_DAY_DAY_7" />
+        <dim:level id="DAY" template="DAYS" />
+        <dim:level id="HOUR8" template="RASTER_DAY_480" />
+        <dim:level id="HOUR2" template="RASTER_DAY_120" />
+        <dim:level id="HOUR" template="RASTER_DAY_60" />
+        <dim:level id="MINUTE30" template="RASTER_DAY_30" />
+        <dim:level id="MINUTE10" template="RASTER_DAY_10" />
+        <dim:level id="MINUTE5" template="RASTER_DAY_5" />
+      </dim:hierarchy>
+    </dim:timedimension>
+  
+    <dim:dimension id="PERSON" descriptor="PERSON">
+      <dim:hierarchy id="GENDER" all="All Persons">
+        <dim:level id="GENDER">
+          <dim:member id="MALE" reg="Philipp|Edison|Tobias" rollUpTo="*" />
+          <dim:member id="FEMALE" reg="Debbie" rollUpTo="*" />
+        </dim:level>
+      </dim:hierarchy>
+    </dim:dimension>
+    
+    <dim:dimension id="LOCATION" descriptor="LOCATION">
+      <dim:hierarchy id="GEO" all="All Locations">
+        <dim:level id="CONTINENT">
+          <dim:member id="EUROPE" name="Europe" rollUpTo="*" />
+          <dim:member id="UNKNOWN" null="true" rollUpTo="*" />
+        </dim:level>
+        <dim:level id="COUNTRY">
+          <dim:member id="GERMANY" reg="Aachen|Mönchengladbach" rollUpTo="EUROPE" />
+        </dim:level>
+      </dim:hierarchy>
+    </dim:dimension>
+  </dim:dimensions>
+  
+  <structure>   
+    <meta position="3" descriptor="PERSON" />
+    <meta position="4" descriptor="LOCATION" />
+    <meta position="5" descriptor="SCREAMS" />
+    
+    <interval position="1" type="start" />
+    <interval position="2" type="end" />
+  </structure>
+  
+  <data metahandling="create">
+    <dataset>
+      <entry class="java.util.Date" value="03.03.2014 00:00:00" />
+      <entry class="java.util.Date" value="04.03.2014 23:59:00" />
+      <entry class="java.lang.String" value="Tobias" />
+      <entry class="java.lang.String" value="Aachen" />
+      <entry class="java.lang.Integer" value="0" />
+    </dataset>
+    
+    <dataset>
+      <entry class="java.util.Date" value="03.03.2014 00:00:00" />
+      <entry class="java.util.Date" value="03.03.2014 16:19:00" />
+      <entry class="java.lang.String" value="Philipp" />
+      <entry class="java.lang.String" value="Mönchengladbach" />
+      <entry class="java.lang.Integer" value="3" />
+    </dataset>
+    
+    <dataset>
+      <entry class="java.util.Date" value="03.03.2014 16:20:00" />
+      <entry class="java.util.Date" value="03.03.2014 17:21:00" />
+      <entry class="java.lang.String" value="Philipp" />
+      <entry class="java.lang.String" />
+      <entry class="java.lang.Integer" value="0" />
+    </dataset>
+    
+    <dataset>
+      <entry class="java.util.Date" value="03.03.2014 17:22:00" />
+      <entry class="java.util.Date" value="04.03.2014 23:59:00" />
+      <entry class="java.lang.String" value="Philipp" />
+      <entry class="java.lang.String" value="Aachen" />
+      <entry class="java.lang.Integer" value="0" />
+    </dataset>
+    
+    <dataset>
+      <entry class="java.util.Date" value="03.03.2014 00:00:00" />
+      <entry class="java.util.Date" value="04.03.2014 23:59:00" />
+      <entry class="java.lang.String" value="Debbie" />
+      <entry class="java.lang.String" value="Aachen" />
+      <entry class="java.lang.Integer" value="0" />
+    </dataset>
+    
+    <dataset>
+      <entry class="java.util.Date" value="03.03.2014 00:00:00" />
+      <entry class="java.util.Date" value="04.03.2014 23:59:00" />
+      <entry class="java.lang.String" value="Edison" />
+      <entry class="java.lang.String" value="Aachen" />
+      <entry class="java.lang.Integer" value="12" />
+    </dataset>
+  </data>
+</model>
